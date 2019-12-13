@@ -74,12 +74,14 @@ namespace CW_EZ_Renewals
         {
 
             // loading data into the data table. 
-
+   
             controlHandler.openConnection();
             controlHandler.loadWebUpAccounts();
             controlHandler.closeConnection();
             setValues(currentRow);
             this.loadAcctsBtn.Hide();
+            this.renewActiveBtn.Show();
+            this.renewNRNPBtn.Show();
 
         }
 
@@ -135,5 +137,9 @@ namespace CW_EZ_Renewals
 
 
         }
+
+
+
     }
+   
 }

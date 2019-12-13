@@ -157,6 +157,7 @@
             this.renewActiveBtn.Text = "Renew \r\nStatus: Active\r\n";
             this.renewActiveBtn.UseVisualStyleBackColor = true;
             this.renewActiveBtn.Click += new System.EventHandler(this.renewActiveBtn_Click);
+            this.renewActiveBtn.Hide();
             // 
             // renewNRNPBtn
             // 
@@ -167,6 +168,7 @@
             this.renewNRNPBtn.Text = "Renew \r\nStatus:NR NP";
             this.renewNRNPBtn.UseVisualStyleBackColor = true;
             this.renewNRNPBtn.Click += new System.EventHandler(this.renewNRNPBtn_Click);
+            this.renewNRNPBtn.Hide();
             // 
             // outstandingBalanceValue
             // 
@@ -208,6 +210,7 @@
             this.Controls.Add(this.acctNumberLabel);
             this.Controls.Add(this.listCountLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "mainFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CryWolf EZ Renewals - NOLA";

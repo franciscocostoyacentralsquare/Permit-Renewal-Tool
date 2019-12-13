@@ -51,10 +51,10 @@ namespace CW_EZ_Renewals
             }
         }
 
-        // load data from server and place in data table 
+        // load data from server and place in data table ONLY LOADS 1K AT A TIME TO SAVE MEMORY 
         internal void loadWebUpAccounts()
         {
-            command = new OleDbCommand("select AlarmNo, lastName, firstName, strNum, FullStreet, currentStatus, NoResponseDateSet, Notes from ALARM_LICENSES where currentStatus = 'Web-Updated' ", connection);
+            command = new OleDbCommand("select top (1000) AlarmNo, lastName, firstName, strNum, FullStreet, currentStatus, NoResponseDateSet, Notes from ALARM_LICENSES where currentStatus = 'Web-Updated' ", connection);
             OleDbDataAdapter da = new OleDbDataAdapter(command);
             da.Fill(localData);
             da.Dispose();
@@ -108,7 +108,6 @@ namespace CW_EZ_Renewals
             notes = "[" + DateTime.Now.ToString() + " EZ RENEW] RENEWED PERMIT VIA WEB UPDATE\\par" + notes;
             notes = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Microsoft Sans Serif;}}\\viewkind4\\uc1\\pard\\f0\\fs20" + notes;
             Console.WriteLine(notes);
-//{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}\viewkind4\uc1\pard\f0\fs20[12 / 28 / 2018 7:32:57 PM asteffey] UPDATED PER REG FORM RECVD\par[2 / 26 / 2018 2:22:05 PM jblancato] UPDATED PER REG FORM RCVD IN BATCH\par\par}
 
 
             try
